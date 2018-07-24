@@ -25,6 +25,9 @@ New Conference :couple:
 ## Super Resolution
 1. [A Boosting Method to Face Image Super-resolution](https://github.com/zhangxiaoya/paper-notes/blob/master/SuperResolution/notes/A-Boosting-Method-to-Face-Image-Super-resolution.md), -- [[PDF]](https://github.com/zhangxiaoya/paper-notes/blob/master/SuperResolution/pdfs/A%20Boosting%20Method%20to%20Face%20Image%20Super-resolution.pdf)
 
+## Deep Neural Net
+Notes and pdfs are [here](https://github.com/zhangxiaoya/paper-notes/blob/master/Deep_Neural_Net/README.md)
+
 ## Visual SLAM
 
-List is [here](https://github.com/zhangxiaoya/paper-notes/blob/master/vSLAM/README.md)
+Notes and pdfs are [here](https://github.com/zhangxiaoya/paper-notes/blob/master/vSLAM/README.md)
