@@ -12,7 +12,7 @@
 
 文章还提到了,以前也有用非监督的方法,这篇文章算是对多种方法的总结和改进.整体的方法结构如下图所示.
 
-![]()
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/vSLAM/notes/undeepvo/1.PNG)
 
 ## 系统构成
 
@@ -29,11 +29,11 @@
 
 从整体上看,训练时,网络输入是立体图像(双目),输出是左右图像的6自由度姿态和深度.网络结构图下图所示
 
-![]()
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/vSLAM/notes/undeepvo/2.PNG)
 
 实现这样的非监督深度学习的特点是: 利用了空间约束和时间约束,分别是左右眼图像和连续帧图像.网络训练模式如下图所示
 
-![]()
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/vSLAM/notes/undeepvo/3.PNG)
 
 ## 目标函数
 空间约束驱动网络恢复图像的深度信息(左右眼图像), 时间约束用来驱动目标的姿态运动(连续帧图像)
