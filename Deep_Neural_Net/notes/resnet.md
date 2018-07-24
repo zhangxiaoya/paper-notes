@@ -20,3 +20,35 @@
 
 这个新的原始映射H(x) = F(x) + x.可以通过一个带有shortcut connection的前馈网络来实现.这里所谓的shortcut connection是跳跃几层的网络连接方式.结果如下图所示:
 ![]()
+
+这个shortcut connection就是所谓的“同等映射”，同等映射的输出与之间的层叠网络的输出加在一起。跟上面图显示的一致。添加这个同等映射，并没有增加参数，也没有增加计算复杂度，其训练过程还是可以使用SGD进行优化，同样使用现在的深度学习工具进行开发。
+
+1. 与同等深度的“plain”网络进行对比，误差很小
+2. 即使深度增加很多，相对于之前的网络，精度要比其他的网络更好
+
+作者在ImageNet、MSCOCO、CIFAR上进行测试，效果很好。
+
+## 残差神经网络
+
+### 残差学习
+
+用H(x)表示一个层叠的网络层（一般是几层，比如2层，3层等，不会是整个网络），x表示这些层叠在一起的网络的输入数据--这是问题的基本形式。
+
+然后是一个假设：如果多个非线性的网络层，能逐渐的逼近一个复杂的函数，那么一个同等的假设，多个非线性的网络层，能逐渐的逼近一个残差，比如上面提到的H(x)-x（这里是简写，假设输入和输出有相同的维度）。
+
+根据这个假设，我们不在期望，这些层叠一起的网络逐渐的逼近一个复杂的函数输出H(x)，而是，期待它能逐渐逼近一个残差F(x)=H(x)-x。那么这个层叠网络的原始逼近的函数H(x)=F(x)+x。虽然逼近效果是一样的，但是学习的效果是不一样的。
+
+在文章还有这样一段话：
+> As we discussed in the introduction, if the added layers can be constructed as identity mappings, a deeper model should have training error no greater than its shallower counterpart. The degradation problem suggests that the solvers might have difficulties in approximating identity mappings by multiple nonlinear layers. With the residual learning reformulation, if identity mappings are optimal, the solvers may simply drive the weights of the multiple nonlinear layers toward zero to approach identity mappings.
+
+大概的意思是：如果增加深度，把增加的这些网络层叠组成一个同等映射，这个同等映射的训练误差要比对应的副本误差要小。在之前的网络训练过程出现的degradation现象说明，用这些层叠的网络逼近同等映射是困难的，但是通过定义残差，网络学习时优化同等映射，使得同等映射达到最优，那么solver就会驱动这些层叠网络的权重逼近0，来逼近同等映射。
+
+### 利用shortcut connection实现同等映射
+通常会对少量的网络层进行残差学习，这些网络层就称作是残差块。一个残差块的定义如下：
+
+$$ y = F(x, {W_i}) + x $$
+
+对于含有两个网络层的残差块定义
+$$F = {W_2}\theta({W_1}x)$$
+
+上面公式都是假设F(x)与x的维度是相同，但是不同的时候，就需要对x进行一个映射。
