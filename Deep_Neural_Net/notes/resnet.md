@@ -14,12 +14,12 @@
 但是神经网络存在的问题也暴露出来,就是随着网络深度的增加,梯度会消失. 这种问题,虽然可以通过在卷基层与激活函数之间增加BN来解决(或者增加正则化层).但是随着网络层次深度的增加,会出现误差增加的的现象,而且不幸的是这种问题不是由过拟合导致的.
 
 误差曲线如下图所示
-![]()
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/Deep_Neural_Net/notes/ResNet/1.PNG)
 
 为了解决这个问题,这篇文章提出了一种残差学习的框架: 之前几个层叠的网络是直接映射(潜在的一个期望映射),这里是把这些层叠网络层进行残差映射. 比如定义之前这几个网络层的映射是 H(x),其中x是这几个网络层的输入,把这几个网络定义成残差映射就是F(x)=H(x)-x.那么原始的潜在映射就是H(x) = F(x) + x.
 
 这个新的原始映射H(x) = F(x) + x.可以通过一个带有shortcut connection的前馈网络来实现.这里所谓的shortcut connection是跳跃几层的网络连接方式.结果如下图所示:
-![]()
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/Deep_Neural_Net/notes/ResNet/2.PNG)
 
 这个shortcut connection就是所谓的“同等映射”，同等映射的输出与之间的层叠网络的输出加在一起。跟上面图显示的一致。添加这个同等映射，并没有增加参数，也没有增加计算复杂度，其训练过程还是可以使用SGD进行优化，同样使用现在的深度学习工具进行开发。
 
@@ -62,6 +62,8 @@ $$F = {W_2}\theta({W_1}x)$$
 2. 如果feature map的大小折半,那么滤波器的数量double.
 
 这些规则是给予VGG网络.
+
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/Deep_Neural_Net/notes/ResNet/3.PNG)
 
 #### 残差网络
 如上图的右侧,如果identity map的尺寸不一致了,有两种方案,一种是扩充填0;另外一种方案是使用映射矩阵映射.
