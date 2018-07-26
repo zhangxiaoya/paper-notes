@@ -28,6 +28,9 @@ New Conference :couple:
 ## Deep Neural Net
 Notes and pdfs are [here](https://github.com/zhangxiaoya/paper-notes/blob/master/Deep_Neural_Net/README.md)
 
+## Detection
+Notes and pdfs are [here](https://github.com/zhangxiaoya/paper-notes/blob/master/Detection/README.md)
+
 ## Visual SLAM
 
 Notes and pdfs are [here](https://github.com/zhangxiaoya/paper-notes/blob/master/vSLAM/README.md)

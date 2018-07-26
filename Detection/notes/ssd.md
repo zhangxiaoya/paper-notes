@@ -126,31 +126,35 @@ SSD与那些需要region proposal的检测算法最关键的不同是,GroundTrut
 
 #### 2.2.2 目标函数
 用下面的公式表示匹配标志(Github不支持公式了,用图片吧)
-![]()
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/Detection/notes/ssd/3.png)
+
 整个目标函数包含两部分,分别表示位置损失和置信分值损失,如下图所示.
-![]()
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/Detection/notes/ssd/4.png)
+
 其中N表示所有匹配成功的default Box的数量,如果N等于0,那么损失函数等于0.
 
 对于方位损失,采用的是smooth L1损失,这里与Faster RCNN类似,回归相对于GroundTruth中心点\宽和高.具体的计算公式如下所示:
-![]()
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/Detection/notes/ssd/5.png)
+
 对于置信分值的参数损失是使用的交叉熵,具体如下:
-![]()
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/Detection/notes/ssd/6.png)
 
 #### 2.2.3 给default Box选择宽高比和尺度
 
 对于尺度的选取,作者从其他的方法那里受到一些启发,这里的尺度设定如下公式所示(假设有m个feature map,每个map的尺度)
-![]()
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/Detection/notes/ssd/7.png)
 
 对于不同的宽高比,设置如下
-![]()
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/Detection/notes/ssd/8.png)
 
 同事每个default Box的宽和高的计算如下所示
-![]()
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/Detection/notes/ssd/9.png)
+
 另外,对于宽高比为1的default的宽和高相等,计算公式如下:
-![]()
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/Detection/notes/ssd/10.png)
 
 每个cell的中心点计算公式如下所示,其中f表示feature map的尺寸.
-
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/Detection/notes/ssd/11.png)
 
 
 #### 2.2.4 负样本挖掘
