@@ -28,7 +28,7 @@ DenseNet比他们所有的算法都狠--"全连接"(有向无环图的方式),�
 
 下面是一个简单的DenseNet示意图
 
-![]()
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/Deep_Neural_Net/notes/DenseNet/1.png)
 
 上图示意的网络中的很多标注,在后续的内容有介绍,比如学习率k是个什么鬼.
 
@@ -67,7 +67,7 @@ xl = Hl([x0, x1, ... , xl-1])
 没有Pooling.Pooling有其他用途.
 
 一个很深的网络结构是由若干个Dense 块组成的,整体的网络结构如下图所示
-![]()
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/Deep_Neural_Net/notes/DenseNet/2.png)
 
 块内是"全连接的",块之间是用一种被叫做"transition Layer"连接的.
 每个transition Layer是由三个操作构成的:BN+1\*1的Conv + Pooling
