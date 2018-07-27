@@ -4,7 +4,7 @@
 
 YOLO v1有很多缺陷,但是它的地位还是很高.下面是YOLO 检测目标的pipeline,很简单.
 
-![]()
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/Detection/notes/yolov1/1.png)
 
 ## 检测模型
 
@@ -20,11 +20,11 @@ YOLO是将整个图像输入到网络中,进行端到端的检测.
 
 每个BoundingBox的置信分值计算公式如下(如果没有目标在当前的cell,那么这个分值就是0):
 
-![]()
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/Detection/notes/yolov1/2.png)
 
 每个cell计算概率分值计算公式如下:
 
-![]()
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/Detection/notes/yolov1/5.png)
 
 在测试阶段,把两者相乘,就会得到具体一类的分值
 
@@ -33,7 +33,7 @@ YOLO是将整个图像输入到网络中,进行端到端的检测.
 ## 网络
 
 网络结构是给予Google Net但是做了修改.结构图如下所示
-![]()
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/Detection/notes/yolov1/3.png)
 
 在后面添加了4个卷积层,和两个全连接层.最后的全连接层用来预测概率和BoundingBox的4个方位.
 
@@ -41,7 +41,7 @@ YOLO是将整个图像输入到网络中,进行端到端的检测.
 
 目标函数包含两个部分,BoundingBox 方位损失和概率损失,如下图所示.
 
-![]()
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/Detection/notes/yolov1/4.png)
 
 那个类似与数字"1"的函数是只是函数,表示在第一个cell中的第j个BoundingBox是否存在一个object;
 这个目标函数的前两行分别表示中心点误差和长宽的误差,增加权重,用来权衡坐标误差与概率误差.
