@@ -7,3 +7,4 @@
 5. **Fast RCNN**: [Note](https://github.com/zhangxiaoya/paper-notes/blob/master/Detection/notes/Fast_RCNN.md) - [PDF]()
 6. **Faster RCNN**: [Note]() - [PDF]()
 7. **Disparity Sliding Window Object Proposals From Disparity Images**: [Note](https://github.com/zhangxiaoya/paper-notes/blob/master/Detection/notes/Disparity%20Sliding%20Window%20Object%20Proposals%20From%20Disparity%20Images.md) - [PDF](https://github.com/zhangxiaoya/paper-notes/blob/master/Detection/pdfs/Disparity%20Sliding%20Window%20Object%20Proposals%20From%20Disparity%20Images.pdf)
+8. **Single-Shot Refined Neural Network for Object Detection**： [Note](https://github.com/zhangxiaoya/paper-notes/blob/master/Detection/notes/Single-Shot%20Refinement%20Neural%20Network%20for%20Object%20Detection.md) - [PDF](https://github.com/zhangxiaoya/paper-notes/blob/master/Detection/pdfs/Single-Shot%20Refinement%20Neural%20Network%20%20for%20Object%20Detection.pdf)
