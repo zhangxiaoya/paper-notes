@@ -37,6 +37,8 @@ RefineNet有两个个部分组成： ARM，anchor refine module；ODM， Object 
 ## 网络架构
 
 首先ARM对anchor box进行refine，减少负样本，并调整anchor box，然后DPM实现对目标分类和对于refined anchor的偏移回归。
+![](https://github.com/sfzhang15/RefineDet/raw/master/refinedet_structure.jpg)
+
 
 ### Transfer Connection Block
 ARM与ODM两者结合的网络如上图所示，这个TCB是这样的。
@@ -49,7 +51,7 @@ TCM是用来把ARM中的不同的feature map转换成DPM中使用，这样，DPM
 
 整个TCB的结构如下图所示
 
-![]()
+![](http://7xi4ue.com1.z0.glb.clouddn.com/papers/detection/single-shot-refined-neural-network-for-object-detection/single-shot%20refined.PNG)
 
 ### 两步级联回归
 之前的一步法，都是采用一步回归，在这一步回归中，预测目标的位置和尺度。但是这种方法在一些挑战性的环境中，特别是对于小目标，很容易检测不到。RefineNet使用两步级联的方式回归策略，对目标的位置和位置进行回归。
