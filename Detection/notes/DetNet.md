@@ -45,7 +45,7 @@ DetNet的好处是设计一个针对目标检测的网络结构，可以不需�
 
 DetNet-59是基于ResNet-50，保持了ResNet中的第一到第四stage，然后添加了第五和stage，详细的结构如下图所示
 
-![]()
+![](https://github.com/zhangxiaoya/paper-notes/blob/master/Detection/notes/DetNet/01.png)
 
 1. 在基干网络中，引入了额外的结构，比如在FPN中使用的网络结构
 2. 前4个stage都是ResNet中的，每一个stage降采样，到了第五stage，降采样16倍了，以后就保持这个分辨率，为此，引入了改进后的膨胀瓶颈结构，如上图中的B。
