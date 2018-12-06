@@ -35,3 +35,6 @@ Notes and pdfs are [here](https://github.com/zhangxiaoya/paper-notes/blob/master
 ## Visual SLAM
 
 Notes and pdfs are [here](https://github.com/zhangxiaoya/paper-notes/blob/master/vSLAM/README.md)
+
+## Instance Segmentation
+Coming soon [instance segmentation](https://github.com/zhuwenzhen/instance-segmentation)
